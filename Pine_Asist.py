@@ -8,7 +8,7 @@ from langchain.chains.question_answering import load_qa_chain
 
 FILE_LIST = "archivos.txt"
 #OPENAI_API_KEY = "Añadir OpenAI API Key"
-INDEX_NAME="pdfdb"
+
 
 ke = st.text_input('Ingresa tu Clave')
 os.environ['OPENAI_API_KEY'] = ke
@@ -16,7 +16,7 @@ if os.environ['OPENAI_API_KEY']:
     #st.set_page_config('preguntaDOC')
     pinecone.init(
     api_key=ke,
-    environment= "us-east-1"
+    environment= "us-west1-gcp"
     )
     st.header("Pregunta a tu PDF")
     
