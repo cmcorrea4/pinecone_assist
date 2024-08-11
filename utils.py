@@ -13,7 +13,7 @@ from langchain.embeddings import HuggingFaceEmbeddings
 FILE_LIST = "archivos.txt"
 PINECONE_API_KEY = "Añadir Pinecone API Key"
 PINECONE_ENV = "Añadir Pinecone Env"
-INDEX_NAME = 'quickstart'
+INDEX_NAME = 'pdfdb'
 
 
 
