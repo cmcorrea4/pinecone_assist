@@ -16,7 +16,7 @@ if os.environ['OPENAI_API_KEY']:
     #st.set_page_config('preguntaDOC')
     pinecone.init(
     api_key=ke,
-    environment= "https://pdfdb-0em6vtx.svc.aped-4627-b74a.pinecone.io"
+    environment= "us-east-1-aws"
     )
     st.header("Pregunta a tu PDF")
     
