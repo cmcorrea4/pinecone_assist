@@ -14,6 +14,10 @@ ke = st.text_input('Ingresa tu Clave')
 os.environ['OPENAI_API_KEY'] = ke
 if os.environ['OPENAI_API_KEY']:
     #st.set_page_config('preguntaDOC')
+    pinecone.init(
+    api_key=ke,
+    environment=us-east-1
+    )
     st.header("Pregunta a tu PDF")
     
     with st.sidebar:
