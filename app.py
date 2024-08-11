@@ -7,7 +7,12 @@ from langchain.chat_models import ChatOpenAI
 from langchain.chains.question_answering import load_qa_chain
 
 FILE_LIST = "archivos.txt"
-OPENAI_API_KEY = "Añadir OpenAI API Key"
+#OPENAI_API_KEY = "Añadir OpenAI API Key"
+
+
+ke = st.text_input('Ingresa tu Clave')
+#os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
+os.environ['OPENAI_API_KEY'] = ke
 
 st.set_page_config('preguntaDOC')
 st.header("Pregunta a tu PDF")
