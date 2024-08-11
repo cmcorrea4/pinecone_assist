@@ -8,7 +8,7 @@ from langchain.chains.question_answering import load_qa_chain
 
 FILE_LIST = "archivos.txt"
 #OPENAI_API_KEY = "Añadir OpenAI API Key"
-
+INDEX_NAME="pdfdb"
 
 ke = st.text_input('Ingresa tu Clave')
 os.environ['OPENAI_API_KEY'] = ke
