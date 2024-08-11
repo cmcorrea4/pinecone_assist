@@ -15,10 +15,7 @@ PINECONE_API_KEY = "Añadir Pinecone API Key"
 PINECONE_ENV = "Añadir Pinecone Env"
 INDEX_NAME = 'taller'
 
-pinecone.init(
-    api_key=ke,
-    environment=us-east-1
-)
+
 
 
 def save_name_files(path, new_files):
