@@ -13,7 +13,7 @@ FILE_LIST = "archivos.txt"
 ke = st.text_input('Ingresa tu Clave')
 os.environ['OPENAI_API_KEY'] = ke
 if os.environ['OPENAI_API_KEY']:
-    st.set_page_config('preguntaDOC')
+    #st.set_page_config('preguntaDOC')
     st.header("Pregunta a tu PDF")
     
     with st.sidebar:
