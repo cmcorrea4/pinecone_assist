@@ -62,7 +62,7 @@ if ke and ke2:
             embeddings = HuggingFaceEmbeddings(
                 model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
                 )
-            vstore = Pinecone.from_existing_index(INDEX_NAME, embeddings)
+            vstore = Pinecone.from_existing_index(langchain-test-index, embeddings)
     
             docs = vstore.similarity_search(user_question, 3)
             llm = ChatOpenAI(model_name='gpt-4o-mini')
