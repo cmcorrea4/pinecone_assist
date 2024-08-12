@@ -19,7 +19,7 @@ st.write("Ingresa API k pinecone")
 ke = st.text_input('Ingresa tu Clave',key=1)
 st.write("Ingresa API k OpenAI")
 ke2 = st.text_input('Ingresa tu Clave',key=2)
-os.environ['OPENAI_API_KEY'] = ke2
+
 
 if os.environ['OPENAI_API_KEY']:
     #st.set_page_config('preguntaDOC')
@@ -58,7 +58,7 @@ if os.environ['OPENAI_API_KEY']:
     if len(archivos)>0:
         user_question = st.text_input("Pregunta: ")
         if user_question:
-            os.environ["OPENAI_API_KEY"] = ke
+            os.environ["OPENAI_API_KEY"] = ke2
             embeddings = HuggingFaceEmbeddings(
                 model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
                 )
