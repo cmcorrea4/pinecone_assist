@@ -13,7 +13,7 @@ from langchain.embeddings import HuggingFaceEmbeddings
 FILE_LIST = "archivos.txt"
 PINECONE_API_KEY = "Añadir Pinecone API Key"
 PINECONE_ENV = "Añadir Pinecone Env"
-INDEX_NAME = 'pdfdb'
+INDEX_NAME = 'langchain-test-index'
 
 
 
@@ -45,7 +45,7 @@ def load_name_files(path):
 def clean_files(path):
     with open(path, "w") as file:
         pass
-    index = pinecone.Index(INDEX_NAME)
+    index = pinecone.Index("langchain-test-index")
     index.delete(delete_all=True)
 
     return True
