@@ -4,7 +4,7 @@ import os
 from utils import *
 from langchain.vectorstores import Pinecone
 
-from langchain_community.vectorstores import FAISS
+#from langchain_community.vectorstores import FAISS
 from langchain.embeddings import HuggingFaceEmbeddings 
 from langchain.chat_models import ChatOpenAI
 from langchain.chains.question_answering import load_qa_chain
