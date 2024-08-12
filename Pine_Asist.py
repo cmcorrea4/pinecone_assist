@@ -16,9 +16,9 @@ FILE_LIST = "archivos.txt"
 spec = ServerlessSpec(cloud='aws', region='us-east-1')
 
 st.write("Ingresa API k pinecone")
-ke = st.text_input('Ingresa tu Clave')
+ke = st.text_input('Ingresa tu Clave',key=1)
 st.write("Ingresa API k OpenAI")
-ke2 = st.text_input('Ingresa tu Clave')
+ke2 = st.text_input('Ingresa tu Clave',key=2)
 os.environ['OPENAI_API_KEY'] = ke2
 
 if os.environ['OPENAI_API_KEY']:
