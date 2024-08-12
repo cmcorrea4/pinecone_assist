@@ -15,9 +15,12 @@ FILE_LIST = "archivos.txt"
 
 spec = ServerlessSpec(cloud='aws', region='us-east-1')
 
-
+st.write("Ingresa API k pinecone")
 ke = st.text_input('Ingresa tu Clave')
-os.environ['OPENAI_API_KEY'] = ke
+st.write("Ingresa API k OpenAI")
+ke2 = st.text_input('Ingresa tu Clave')
+os.environ['OPENAI_API_KEY'] = ke2
+
 if os.environ['OPENAI_API_KEY']:
     #st.set_page_config('preguntaDOC')
     pc = Pinecone(api_key=ke)
@@ -55,14 +58,14 @@ if os.environ['OPENAI_API_KEY']:
     if len(archivos)>0:
         user_question = st.text_input("Pregunta: ")
         if user_question:
-            os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
+            os.environ["OPENAI_API_KEY"] = ke
             embeddings = HuggingFaceEmbeddings(
                 model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
                 )
             vstore = Pinecone.from_existing_index(INDEX_NAME, embeddings)
     
             docs = vstore.similarity_search(user_question, 3)
-            llm = ChatOpenAI(model_name='gpt-3.5-turbo')
+            llm = ChatOpenAI(model_name='gpt-4o-mini')
             chain = load_qa_chain(llm, chain_type="stuff")
             respuesta = chain.run(input_documents=docs, question=user_question)
     
