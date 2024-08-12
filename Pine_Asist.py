@@ -5,19 +5,20 @@ from langchain.vectorstores import Pinecone
 from langchain.embeddings import HuggingFaceEmbeddings 
 from langchain.chat_models import ChatOpenAI
 from langchain.chains.question_answering import load_qa_chain
+from pinecone import ServerlessSpec
 
 FILE_LIST = "archivos.txt"
 #OPENAI_API_KEY = "Añadir OpenAI API Key"
+
+spec = ServerlessSpec(cloud='aws', region='us-east-1')
 
 
 ke = st.text_input('Ingresa tu Clave')
 os.environ['OPENAI_API_KEY'] = ke
 if os.environ['OPENAI_API_KEY']:
     #st.set_page_config('preguntaDOC')
-    pinecone.init(
-    api_key=ke,
-    environment= "us-west1-gcp"
-    )
+    pc = Pinecone(api_key=os.environ['OPENAI_API_KEY'])
+    index = pc.Index('pdfbd')
     st.header("Pregunta a tu PDF")
     
     with st.sidebar:
