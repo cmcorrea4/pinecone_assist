@@ -23,6 +23,7 @@ import getpass
 
 FILE_LIST = "archivos.txt"
 #OPENAI_API_KEY = "Añadir OpenAI API Key"
+index_name = "langchain-test-index"
 
 spec = ServerlessSpec(cloud='aws', region='us-east-1')
 
