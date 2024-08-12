@@ -9,6 +9,15 @@ from langchain.chat_models import ChatOpenAI
 from langchain.chains.question_answering import load_qa_chain
 from pinecone import ServerlessSpec
 from pinecone import Pinecone, ServerlessSpec
+from langchain_openai import OpenAIEmbeddings
+import getpass
+
+    
+
+
+
+
+
 
 FILE_LIST = "archivos.txt"
 #OPENAI_API_KEY = "Añadir OpenAI API Key"
@@ -19,7 +28,7 @@ st.write("Ingresa API k pinecone")
 ke = st.text_input('Ingresa tu Clave',key=1)
 st.write("Ingresa API k OpenAI")
 ke2 = st.text_input('Ingresa tu Clave',key=2)
-
+os.environ["OPENAI_API_KEY"] =ke2
 
 if ke and ke2:
     #st.set_page_config('preguntaDOC')
@@ -59,10 +68,9 @@ if ke and ke2:
         user_question = st.text_input("Pregunta: ")
         if user_question:
             os.environ["OPENAI_API_KEY"] = ke2
-            embeddings = HuggingFaceEmbeddings(
-                model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
-                )
-            vstore = Pinecone.from_existing_index(langchain-test-index, embeddings)
+            embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
+            
+            vstore = Pinecone.from_existing_index("langchain-test-index", embeddings)
     
             docs = vstore.similarity_search(user_question, 3)
             llm = ChatOpenAI(model_name='gpt-4o-mini')
