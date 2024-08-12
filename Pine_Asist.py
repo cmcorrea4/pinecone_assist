@@ -2,7 +2,8 @@ import streamlit as st
 import pinecone
 import os
 from utils import *
-#from langchain.vectorstores import Pinecone
+from langchain.vectorstores import Pinecone
+
 from langchain_community.vectorstores import FAISS
 from langchain.embeddings import HuggingFaceEmbeddings 
 from langchain.chat_models import ChatOpenAI
