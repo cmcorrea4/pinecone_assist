@@ -1,4 +1,5 @@
 import streamlit as st
+import pinecone
 import os
 from utils import *
 from langchain.vectorstores import Pinecone
