@@ -21,7 +21,7 @@ st.write("Ingresa API k OpenAI")
 ke2 = st.text_input('Ingresa tu Clave',key=2)
 
 
-if os.environ['OPENAI_API_KEY']:
+if ke and ke2:
     #st.set_page_config('preguntaDOC')
     pc = Pinecone(api_key=ke)
     index = pc.Index('langchain-test-index')
