@@ -18,8 +18,8 @@ ke = st.text_input('Ingresa tu Clave')
 os.environ['OPENAI_API_KEY'] = ke
 if os.environ['OPENAI_API_KEY']:
     #st.set_page_config('preguntaDOC')
-    pc = Pinecone(os.environ['OPENAI_API_KEY'])
-    index = pc.Index('pdfbd')
+    pc = Pinecone((api_key=os.environ['OPENAI_API_KEY'])
+    index = pc.Index('langchain-test-index')
     st.header("Pregunta a tu PDF")
     
     with st.sidebar:
