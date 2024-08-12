@@ -23,7 +23,7 @@ import getpass
 
 FILE_LIST = "archivos.txt"
 #OPENAI_API_KEY = "Añadir OpenAI API Key"
-index_name = "langchain-test-index"
+
 
 spec = ServerlessSpec(cloud='aws', region='us-east-1')
 
@@ -36,6 +36,7 @@ os.environ["OPENAI_API_KEY"] =ke2
 if ke and ke2:
     #st.set_page_config('preguntaDOC')
     pc = Pinecone(api_key=ke)
+    index_name = "langchain-test-index"
     index = pc.Index('langchain-test-index')
     st.header("Pregunta a tu PDF")
     
