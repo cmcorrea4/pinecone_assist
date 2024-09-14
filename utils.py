@@ -45,7 +45,7 @@ def load_name_files(path):
 def clean_files(path):
     with open(path, "w") as file:
         pass
-    index = pinecone.Index("langchain-test-index")
+    index = pinecone.Index("langchain-test-index", dimension=1536)
     index.delete(delete_all=True)
 
     return True
