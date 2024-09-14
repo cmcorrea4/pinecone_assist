@@ -69,7 +69,7 @@ if ke and ke2:
         user_question = st.text_input("Pregunta: ")
         if user_question:
             os.environ["OPENAI_API_KEY"] = ke2
-            embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
+            embeddings = OpenAIEmbeddings(model="text-embedding-ada-002 ")
             vector_store = PineconeVectorStore(index="langchain-test-index", embedding=embeddings)
            
     
