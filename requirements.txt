@@ -7,3 +7,4 @@ pypdf==3.16.4
 pinecone-client
 pinecone-notebooks
 sentence-transformers==2.2.2
+tiktoken
