@@ -34,7 +34,7 @@ if ke and ke2:
     pc = Pinecone(api_key=ke)
     index_name = "langchain-test-index"
     
-    index = pc.Index('langchain-test-index',dimension=3072)
+    index = pc.Index('langchain-test-index',dimension=1536)
     st.header("Pregunta a tu PDF")
     
     with st.sidebar:
