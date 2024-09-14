@@ -1,7 +1,7 @@
 
 import os
 import streamlit as st
-
+from langchain.embeddings.openai import OpenAIEmbeddings
 import pinecone
 import tempfile
 from langchain.text_splitter import RecursiveCharacterTextSplitter
