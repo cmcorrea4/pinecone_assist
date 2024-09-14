@@ -78,9 +78,11 @@ def create_embeddings(file_name, text):
     
     chunks = text_splitter.split_documents(text)
 
-    embeddings = HuggingFaceEmbeddings(
-        model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
-        )
+    embeddings=openai.Embedding.create(input=text, model='text-embedding-ada-002')
+
+    #embeddings = HuggingFaceEmbeddings(
+    #    model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+    #    )
     
     Pinecone.from_documents(
         chunks,
